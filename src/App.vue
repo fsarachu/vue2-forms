@@ -68,13 +68,25 @@
                         <input
                                 type="radio"
                                 id="male"
-                                value="Male"> Male
+                                name="gender"
+                                value="Male"
+                                v-model="userData.gender"> Male
                     </label>
                     <label for="female">
                         <input
                                 type="radio"
                                 id="female"
-                                value="Female"> Female
+                                name="gender"
+                                value="Female"
+                                v-model="userData.gender"> Female
+                    </label>
+                    <label for="not_specified">
+                        <input
+                                type="radio"
+                                id="not_specified"
+                                name="gender"
+                                value="Not specified"
+                                v-model="userData.gender"> Not specified
                     </label>
                 </div>
             </div>
@@ -91,10 +103,7 @@
             <hr>
             <div class="row">
                 <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-                    <button
-                            class="btn btn-primary">Submit!
-
-                    </button>
+                    <button class="btn btn-primary">Submit!</button>
                 </div>
             </div>
         </form>
@@ -114,7 +123,7 @@
                         <ul>
                             <li></li>
                         </ul>
-                        <p>Gender:</p>
+                        <p>Gender: {{ userData.gender }}</p>
                         <p>Priority:</p>
                         <p>Switched:</p>
                     </div>
@@ -131,7 +140,8 @@
                 userData: {
                     email: '',
                     password: '',
-                    age: 18
+                    age: 18,
+                    gender: 'Not specified'
                 },
                 message: ''
             };
